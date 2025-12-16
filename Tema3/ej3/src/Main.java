@@ -1,7 +1,5 @@
 import java.util.*;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     private static Scanner sc = new Scanner(System.in);
     private static Stack<String> libros = new Stack<>();
@@ -55,7 +53,7 @@ public class Main {
                 System.out.println("saliendo del programa...");
                 System.exit(0);
                 break;
-    }
+        }
 }
 
     public static void nuevoLibro(){
@@ -67,11 +65,11 @@ public class Main {
         nombreLibro = sc.nextLine();
         libros.push(nombreLibro);
         System.out.println("libro añadido :" + libros.peek());
-        System.out.println("quieres añadir otro? (SI / NO)");
+        System.out.println("quieres añadir otro? (1.SI / 2.NO)");
         seguir = sc.nextLine();
-        if (seguir.equals("si") || seguir.equals("SI") || seguir.equals("Si")){
+        if (seguir.equals("1")){
             otro = true;
-        } else if (seguir.equals("NO") || seguir.equals("No") || seguir.equals("no")) {
+        } else if (seguir.equals("2")) {
             otro = false;
         }
     }while (otro == true);
