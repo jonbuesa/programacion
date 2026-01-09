@@ -1,26 +1,28 @@
 public class Circunferencia {
 
+    private double radio;
 
     public Circunferencia(double radio) {
-
+        this.radio = radio;
     }
 
-
-    public static void setRadio(double radio) {
-
+    public double getRadio() {
+        return radio;
     }
 
-    public static void CalcularLongitud(){
-
+    public void setRadio(double radio) {
+        this.radio = radio;
     }
 
-    public static void CalcularArea(){
-
+    public double calcularCircunferencia(){
+        return 2 * Math.PI * radio;
     }
 
-    public static void CalcularVolumen(){
-
+    public double calcularArea(){
+        return Math.PI * radio * radio;
     }
 
-
+    public double calcularVolume(){
+        return 4 * Math.PI * radio * radio * radio /3;
+    }
 }
