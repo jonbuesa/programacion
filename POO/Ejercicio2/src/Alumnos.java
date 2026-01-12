@@ -4,8 +4,6 @@ class Datos_Alumnos {
     private String domicilio;
     private String telefono;
 
-    public Datos_Alumnos(int i, String juanPerez, String domicilio, String telefono) {
-    }
 
     public Datos_Alumnos(String codigo, String nombre, String domicilio, String telefono) {
         this.codigo = codigo;
