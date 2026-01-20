@@ -1,8 +1,12 @@
-public class Pelicula {
+public class Pelicula extends Estudio {
     private String titulo;
     private int año;
     private int duracionMinutos;
     private String tipo;
+
+
+    public Pelicula() {
+    }
 
     public Pelicula(String titulo, int año, int duracionMinutos, String tipo) {
         this.titulo = titulo;

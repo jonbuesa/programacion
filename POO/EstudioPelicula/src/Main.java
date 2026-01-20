@@ -1,23 +1,63 @@
-import com.sun.source.doctree.EscapeTree;
+import java.util.ArrayList;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    private static Estudio[] estudio = new Estudio[3];
     public static void main(String[] args) {
+        ArrayList<Estudio> estudios = new ArrayList<Estudio>();
+        ArrayList<Pelicula> peliculas = new ArrayList<Pelicula>();
+
+        Estudio estudio1 = new Estudio("Pixar", "Emeryville", "1200 Park Ave", "www.pixar.com", 1983, "USA", 1234567890, "Toy Story, Finding Nemo");
+        Estudio estudio2 = new Estudio("Warner Bros", "Burbank", "4000 Warner Blvd", "www.warnerbros.com", 1943, "USA", 987654321, "The Dark Knight");
+
+        estudios.add(estudio1);
+        estudios.add(estudio2);
 
 
-        Estudio c1 = new Estudio("Universal","Wasington","LA","www.universal.com",1995,"EEUU",999999999);
-        Estudio c2 = new Estudio("Century","Madrid","Vallecas","www.century.com",1920,"España",111111111);
-        Estudio c3 = new Estudio("Walt Disney","Paris","Calle Francia", "www.wd.com",1935,"Francia",444444444);
+        Pelicula pelicula1 = new Pelicula("Toy Story", 1995, 81, "Animacion");
+        Pelicula pelicula2 = new Pelicula("The Dark Knight", 2008, 152, "Accion");
+        Pelicula pelicula3 = new Pelicula("Finding Nemo", 2003, 100, "Animacion");
 
-        c1 = estudio[0];
-        c2 = estudio[1];
-        c3 = estudio[2];
+        peliculas.add(pelicula1);
+        peliculas.add(pelicula2);
+        peliculas.add(pelicula3);
 
-        Pelicula p1 = new Pelicula("ET",1978,160,"Ciencia Ficcion");
-        Pelicula p2 = new Pelicula("Titanic",1969,210,"Amor");
-        Pelicula p3 = new Pelicula("Mortadelo Y Filemon",1999,200,"Comedia");
+        Pelicula peliculamaslarga = null;
+
+
+        for (Pelicula pelicula : peliculas) {
+            if (peliculamaslarga == null || pelicula.getDuracionMinutos() > peliculamaslarga.getDuracionMinutos()) {
+                peliculamaslarga = pelicula;
+            }
+        }
+
+        System.out.println("La pelicula mas larga es: " + peliculamaslarga.getTitulo() + " con una duracion de " + peliculamaslarga.getDuracionMinutos() + " minutos.");
+
+        System.out.println("Producida por el estudio: ");
+        for (Estudio estudio : estudios) {
+            if (estudio.getPeliculasProducidas().contains(peliculamaslarga.getTitulo())) {
+                System.out.println(estudio.getNombre());
+            }
+        }
+
+        int maxPeliculas = 0;
+        String estudioConMasPeliculas = "";
+        for (Estudio estudio : estudios) {
+            String[] peliculasProducidas = estudio.getPeliculasProducidas().split(", ");
+            if (peliculasProducidas.length > maxPeliculas) {
+                maxPeliculas = peliculasProducidas.length;
+                estudioConMasPeliculas = estudio.getNombre();
+            }
+        }
+        System.out.println("El estudio con mas peliculas producidas es: " + estudioConMasPeliculas + " con " + maxPeliculas + " peliculas.");
+
+
+
+
+
+
+
+
+
+
 
 
     }

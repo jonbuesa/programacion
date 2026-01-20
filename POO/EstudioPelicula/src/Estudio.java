@@ -8,6 +8,18 @@ public class Estudio {
     private int fechaFundacion;
     private String pais;
     private int telefono;
+    private String peliculasProducidas;
+
+    public Estudio(String nombre, String ciudad, String direccion, String web, int fechaFundacion, String pais, int telefono, String peliculasProducidas) {
+        this.nombre = nombre;
+        this.ciudad = ciudad;
+        this.direccion = direccion;
+        this.web = web;
+        this.fechaFundacion = fechaFundacion;
+        this.pais = pais;
+        this.telefono = telefono;
+        this.peliculasProducidas = peliculasProducidas;
+    }
 
     public String getNombre() {
         return nombre;
@@ -65,15 +77,25 @@ public class Estudio {
         this.telefono = telefono;
     }
 
-    public Estudio(String nombre, String ciudad, String direccion, String web, int fechaFundacion, String pais, int telefono) {
-        this.nombre = nombre;
-        this.ciudad = ciudad;
-        this.direccion = direccion;
-        this.web = web;
-        this.fechaFundacion = fechaFundacion;
-        this.pais = pais;
-        this.telefono = telefono;
+    public String getPeliculasProducidas() {
+        return peliculasProducidas;
+    }
 
+    public void setPeliculasProducidas(String peliculasProducidas) {
+        this.peliculasProducidas = peliculasProducidas;
+    }
 
+    @Override
+    public String toString() {
+        return "Estudio{" +
+                "nombre='" + nombre + '\'' +
+                ", ciudad='" + ciudad + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", web='" + web + '\'' +
+                ", fechaFundacion=" + fechaFundacion +
+                ", pais='" + pais + '\'' +
+                ", telefono=" + telefono +
+                ", peliculasProducidas='" + peliculasProducidas + '\'' +
+                '}';
     }
 }
