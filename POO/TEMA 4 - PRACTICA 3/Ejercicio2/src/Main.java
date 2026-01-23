@@ -5,19 +5,17 @@ import java.util.Scanner;
 public class Main {
     private static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
-
+            menu();
 
     }
 
     public static void menu(){
-        int x = sc.nextInt();
         System.out.println("que opcion quieres? \n"
                         + "1. Mostrar numero de clientes \n"
                         + "2. Datos personales de un cliente \n"
                         + "3. Datos del veterinario \n"
                         + "4. Datos de la mascota de un cliente \n"
                         + "5. Datos de la mascota de un veterinario");
-
 
     }
 }
