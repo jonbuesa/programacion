@@ -10,5 +10,5 @@ private String nombre;
          }
 
          public String getNombre () { return nombre; }
- public List <Coche> getCoches () { return coches; }
+         public List <Coche> getCoches() { return coches; }
  }
