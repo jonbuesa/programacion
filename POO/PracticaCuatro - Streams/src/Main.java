@@ -50,8 +50,10 @@ public class Main {
         /*for (Coche c : Coches){
             matriculas.add(c.getMatricula());
             System.out.println(c.getMatricula());
-        }*/
+        } */
 
+        //1 con stream
+        //Coches.stream().map(Coche::getMatricula).forEach(System.out::println);
 
 
 
@@ -60,15 +62,22 @@ public class Main {
             System.out.println(p.getCoches().size());
         } */
 
+        //2 con stream
+        //long total = Coches.stream().count();
+
 
 
         //3 sin Stream
-        /*List<Coche> mas2015 = new ArrayList<>();
-        for (Coche c : Coches) {
+        List<Coche> mas2015 = new ArrayList<>();
+        /*for (Coche c : Coches) {
             if (c.getAño() > 2015) {
                 mas2015.add(c);
                 System.out.println(c.getAño());}
         }*/
+
+        //3 con stream
+        //Coches.stream().filter(c -> c.getAño() > 2015).toList() ;
+
 
         //4
 
