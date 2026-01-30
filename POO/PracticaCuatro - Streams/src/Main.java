@@ -1,6 +1,9 @@
 import java.security.PrivateKey;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -80,7 +83,78 @@ public class Main {
 
 
         //4
+  /*      double sum = 0; for(Coche c : Coches) sum += c.getPrecio(); double avg = sum / Coches.size();
+
+        double average = Coches.stream().mapToDouble(Coche::getPrecio).average().orElse(0.0);
+*/
+
+    //5
+        // Coche max = Coches.stream().max(Comparator.comparing(Coche::getPrecio)).orElse(null);
 
 
- }
+    //6
+        // boolean exists = Coches.stream().anyMatch(c -> c.getMarca().equals("BMW"));
+
+    //7
+        // List<Coche> res = Coches.stream().sorted(Comparator.comparing(Coche::getPrecio)).toList();
+
+    //8
+        // Coche old = Coches.stream().min(Comparator.comparing(Coche::getAño)).orElse(null);
+
+    //9
+        // long count = Coches.stream().filter(c -> c.getPrecio() > 20000).count();
+
+    //10
+        // List<String> marcas = Coches.stream().map(Coche::getMarca).distinct().toList();
+
+    //11
+        // Map<String, Double> map = Coches.stream().collect(Collectors.toMap(Coche::getMatricula, Coche::getPrecio));
+
+    //12
+        // Map<String, List<Coche>> group = Coches.stream().collect(Collectors.groupingBy(Coche::getMarca));
+
+    //13
+        // Map<String, List<Coche>> res = Coches.stream().collect(Collectors.groupingBy(c -> c.getAño() > 2015 ? "Moderno" : "Antiguo"));
+
+    //14
+        // Map<String, Double> res = Coches.stream().collect(Collectors.groupingBy(Coche::getMarca, Collectors.averagingDouble(Coche::getPrecio)));
+
+    //15
+        // String res = coches.stream().map(Coche::getMatricula).collect(Collectors.joining(", "));
+
+   //16
+        //  long n = coches.stream().filter(c -> c.getMarca().equals("Toyota")).count();
+
+    //17
+        // List<String> res = Coches.stream().map(Coche::getMarca).distinct().sorted().toList();
+
+    //18
+        // Coche res = Coches.stream().filter(c -> c.getAño() > 2015).min(Comparator.comparing(Coche::getPrecio)).orElse(null);
+
+    //19
+        // boolean rep = Coches.stream().map(Coche::getMatricula).distinct().count() != coches.size();
+
+    //20
+        // List<Coche> top3 = coches.stream().sorted(Comparator.comparing(Coche::getPrecio).reversed()).limit(3).toList();
+
+    //21
+        //a
+            //List<Coche> todos = Propietarios.stream().flatMap(p -> p.getCoches().stream()).toList();
+
+        //b
+            //long total = Propietarios.stream().mapToLong(p -> p.getCoches().size()).sum();
+
+        //c
+            /*boolean tieneBMW = propietarios.stream()
+                                       .flatMap(p -> p.getCoches().stream())
+                                      .anyMatch(c -> c.getMarca().equals("BMW")); */
+
+        //d
+        /*boolean tieneBMW = Propietarios.stream()
+                .flatMap(p -> p.getCoches().stream())
+                .anyMatch(c -> c.getMarca().equals("BMW"));*/
+
+    }
+
+
 }
